@@ -9,11 +9,20 @@ slides:
 
 <main>
     {{ partial:section
-        title_size="big"
+        heading_size="big"
         container="full"
-        title="About Us"
+        heading="About Us"
         classes="pt-12 lg:pt-16 xl:pt-22.5"
     }}
         {{ partial:slider :slides="view:slides" }}
+    {{ /partial:section }}
+
+    {{ partial:section
+        container="full"
+        classes="bg-beige-200 py-16 mt-5 md:py-20"
+    }}
+        <h2 class="max-w-xl px-2 mx-auto text-3xl font-secondary text-black text-center leading-[1.4] lg:max-w-[54.75rem] lg:text-5xl lg:leading-[1.4]">
+            We are a not-for-profit, impartial body comprised of members and partners from across the UK spa, salon and wellness sector.
+        </h2>
     {{ /partial:section }}
 </main>
