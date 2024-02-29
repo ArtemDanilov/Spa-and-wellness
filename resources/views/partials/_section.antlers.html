@@ -1,0 +1,15 @@
+<section class="w-full">
+    
+    <div class="{{ container !== 'full' ?= 'container' }} {{ classes }}">
+        <div class="{{ container === 'full' ?= 'text-center px-2' }}">
+            <h2 class="font-secondary text-black leading-tight {{ title_size === 'big' ? 'text-5xl lg:text-6xl 2xl:text-7.5xl mb-8' : 'text-3xl lg:text-5.5xl mb-2.5' }}">
+                {{ title }}
+            </h2>
+            <p class="font-primary text-brown text-base leading-normal max-w-[52.25rem] mx-auto lg:text-xl lg:leading-normal">
+                {{ subtitle }}
+            </p>
+        </div>
+
+        {{ slot }}
+    </div>
+</section>

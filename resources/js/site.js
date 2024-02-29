@@ -1,5 +1,10 @@
-import Alpine from 'alpinejs'
+import Alpine from 'alpinejs';
+import gallery from './slider';
  
-window.Alpine = Alpine
+window.Alpine = Alpine;
  
-Alpine.start()
+Alpine.start();
+
+document.addEventListener('DOMContentLoaded', () => {
+    gallery.mount();
+} );

@@ -1,0 +1,16 @@
+<div class="splide gallery cursor-grab" aria-label="Basic Structure Example">
+    <div class="splide__track">
+        <ul class="splide__list">
+            {{ slides }}
+                <li class="splide__slide max-w-sm md:max-w-[25.5rem]">
+                    {{ partial:image 
+                        :url="img"
+                        width="408"
+                        height="507"
+                        quality="50"
+                    }}
+                </li>
+            {{ /slides }}
+        </ul>
+  </div>
+</div>

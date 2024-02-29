@@ -1,0 +1,19 @@
+---
+slides:
+  - img: "/assets/pebbles_1.jpg"
+  - img: "/assets/pebbles_2.jpg"
+  - img: "/assets/pebbles_3.jpg"
+  - img: "/assets/pebbles_4.jpg"
+  - img: "/assets/pebbles_5.jpg"
+---
+
+<main>
+    {{ partial:section
+        title_size="big"
+        container="full"
+        title="About Us"
+        classes="pt-12 lg:pt-16 xl:pt-22.5"
+    }}
+        {{ partial:slider :slides="view:slides" }}
+    {{ /partial:section }}
+</main>

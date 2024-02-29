@@ -40,8 +40,15 @@ export default {
             'beige-100': '#EEE7E1',
             'beige-200': '#E8DBCD',
         },
+        fontSize: {
+            '5.5xl': ['3.125rem', '1.2'], // 50px
+            '7.5xl': ['5.625rem', '1.2']  // 90px
+        },
         margin: {
             '7.5': '1.875rem',  // 30px
+        },
+        padding: {
+            '22.5': '5.625rem',  // 90px
         },
         keyframes: {
             fadeIn: {
