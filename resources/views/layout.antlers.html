@@ -8,7 +8,12 @@
 
         {{ vite src="resources/js/site.js|resources/scss/site.scss" }}
     </head>
+    <body class="bg-beige-50">
 
-    <body class="bg-[#F8F7F4]">
+        {{ partial:layout/header }}
+
+        <main></main>
+
+        {{# {{  partial:layout/footer  }} #}}
     </body>
 </html>

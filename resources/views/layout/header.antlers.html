@@ -1,0 +1,83 @@
+---
+links: 
+  - title: "About us"
+    url: "#about-us"
+  - title: "Campaigns"
+    url: "#campaigns"
+  - title: "Memberships"
+    url: "#memberships"
+  - title: "Sponsorships"
+    url: "#sponsorships"
+  - title: "Events"
+    url: "#events"
+---
+
+<header
+  x-data="{ isNavOpen: false }"
+  class="container w-full py-2 flex items-center justify-between lg:py-4"
+>
+  <a href="/">
+    {{ svg src="assets/logo" class="w-32 lg:w-52" }}
+  </a>
+
+  <nav
+    x-cloak
+    x-bind:class="isNavOpen ? 'translate-x-0' : 'translate-x-full'"
+    class="fixed top-0 right-0 w-screen h-dvh flex flex-col bg-beige-100 justify-center transition duration-300 ease-out xl:hidden"
+  >
+    <button
+      type="button"
+      class="absolute w-8 h-8 top-8 right-5"
+      @click="isNavOpen = false"
+    >
+      <span class="sr-only">Close Menu button</span>
+      <div class="absolute-centered w-10 h-0.5 bg-black rotate-45"></div>
+      <div class="absolute-centered w-10 h-0.5 bg-black -rotate-45"></div>
+    </button>
+
+    <ul class="w-full space-y-8 overflow-y-auto">
+      {{ view:links }}
+        <li>
+          <a href="{{ url }}" class="block font-primary font-normal text-3xl text-center">
+            {{ title }}
+          </a>
+        </li>
+      {{ /view:links }}
+    </ul>
+
+    <div class="absolute-x-centered bottom-0 w-full flex justify-center space-x-2.5 p-4 lg:hidden">
+      <button type="button" class="font-primary font-semibold text-sm py-2 px-6 bg-beige-200 text-black">Sign in</button>
+      <button type="button" class="font-primary font-semibold text-sm py-2 px-6 bg-black text-beige-200">Join us</button>
+    </div>
+  </nav>
+
+  <div class="flex items-center">
+    <button
+        type="button"
+        class="w-10 h-10 lg:mr-7.5 xl:hidden"
+        @click="isNavOpen = true"
+      >
+      <span class="sr-only">Menu button</span>
+      <div class="w-10 h-0.5 mb-2 bg-black"></div>
+      <div class="w-10 h-0.5 mb-2 bg-black"></div>
+      <div class="w-10 h-0.5 bg-black"></div>
+    </button>
+
+    <nav class="hidden mr-7.5 xl:block">
+      <ul class="w-full flex">
+        {{ view:links }}
+          <li>
+            <a href="{{ url }}" class="inline-block px-3.5 py-1 font-primary font-normal text-base">
+              {{ title }}
+            </a>
+          </li>
+        {{ /view:links }}
+      </ul>
+    </nav>
+  
+    <div class="hidden space-x-2.5 lg:flex">
+      <button type="button" class="font-primary font-semibold text-sm py-2 px-6 bg-beige-200 text-black">Sign in</button>
+      <button type="button" class="font-primary font-semibold text-sm py-2 px-6 bg-black text-beige-200">Join us</button>
+    </div>
+  </div>
+</header>
