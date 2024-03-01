@@ -1,0 +1,53 @@
+---
+links: 
+  - title: "About us"
+    url: "#about-us"
+  - title: "Code of conduct"
+    url: "#codeofconduct"
+  - title: "Privacy Policy"
+    url: "#privacypolicy"
+  - title: "Terms & Conditions"
+    url: "#terms&conditions"
+social_media:
+  - name: "instagram"
+  - name: "youtube"
+  - name: "facebook"
+  - name: "twitter"
+  - name: "linkedin"
+---
+
+<footer class="bg-black pt-8 md:pt-14">
+    <div class="container">
+        <div class="flex flex-col items-center pb-11 border-b border-beige-50 border-opacity-20 md:flex-row md:items-end md:justify-between">
+            <a href="/" class="block mb-11 md:mb-0">
+                {{ svg src="assets/logo" class="logo-light w-40 lg:w-52" }}
+            </a>
+    
+            <div>
+                <ul class="space-y-3 mb-4">
+                    <li class="font-primary font-normal text-center text-base text-[#9E958C] md:text-left">UKSWA</li>
+        
+                    {{ view:links }}
+                        <li>
+                            <a href="{{ url }}" class="block font-primary font-normal text-beige-50 text-base text-center md:text-left">
+                                {{ title }}
+                            </a>
+                        </li>
+                    {{ /view:links }}
+                </ul>
+        
+                <ul class="flex items-center space-x-5">
+                    {{ view:social_media }}
+                        <li>
+                            <a href="#{{ name }}" target="_blank" rel="noopener noreferrer" class="block">
+                                {{ partial src="icons/{ name }" class="text-white w-6 h-auto" }}
+                            </a>
+                        </li>
+                    {{ /view:social_media }}
+                </ul>
+            </div>
+        </div>
+
+        <p class="font-primary text-sm text-center text-gray py-10 md:text-left">© 2023 United Kingdom Spa & Wellness Association</p>
+    </div>
+</footer>

@@ -2,4 +2,8 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-/* This is all you. */
+@import "fonts";
+@import "utilities";
+
+@import './modules/logo';
+@import './modules/team';

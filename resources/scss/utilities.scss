@@ -1,0 +1,29 @@
+[x-cloak] {
+    @apply hidden #{!important};
+}
+
+.absolute-centered {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+.absolute-x-centered {
+    @apply absolute left-1/2 -translate-x-1/2;
+}
+
+.heading {
+    &-sm {
+        @apply text-3xl leading-tight font-secondary lg:text-5.5xl mb-2.5;
+    }
+    &-md {
+        @apply text-3xl font-secondary text-center leading-[1.4] lg:text-5xl lg:leading-[1.4];
+    }
+    &-lg {
+        @apply text-5xl leading-tight font-secondary lg:text-6xl 2xl:text-7.5xl mb-8;
+    }
+}
+
+.heading-white {
+    h2, p {
+        @apply text-white #{!important};
+    }
+}

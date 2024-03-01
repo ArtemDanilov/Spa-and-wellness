@@ -1,0 +1,72 @@
+---
+formats:
+  -
+    file: "webp"
+  -
+    file: "jpeg"
+---
+
+<picture>
+  {{ view:formats }}
+    {{ if w_2xl }}
+      <source
+        media="(min-width: 1440px)"
+        srcset="
+          {{ glide:url :width='w_2xl' :height='(w_2xl * height) / width' :format='file' fit='{ fit ?? "crop_focal" }' quality='{ quality ?? "70"}' }},
+          {{ glide:url :width='(w_2xl * 2)' :height='((w_2xl * 2) * height) / width' :format='file' fit='{ fit ?? "crop_focal" }' quality='{ quality ?? "70"}' }} 2x
+        "
+      />
+    {{ /if }}
+
+    {{ if w_xl }}
+      <source
+        media="(min-width: 1280px)"
+        srcset="
+          {{ glide:url :width='w_xl' :height='(w_xl * height) / width' :format='file' fit='{ fit ?? "crop_focal" }' quality='{ quality ?? "70"}' }},
+          {{ glide:url :width='(w_xl * 2)' :height='((w_xl * 2) * height) / width' :format='file' fit='{ fit ?? "crop_focal" }' quality='{ quality ?? "70"}' }} 2x
+        "
+      />
+    {{ /if }}
+
+    {{ if w_lg }}
+      <source
+        media="(min-width: 1024px)"
+        srcset="
+          {{ glide:url :width='w_lg' :height='(w_lg * height) / width' :format='file' fit='{ fit ?? "crop_focal" }' quality='{ quality ?? "70"}' }},
+          {{ glide:url :width='(w_lg * 2)' :height='((w_lg * 2) * height) / width' :format='file' fit='{ fit ?? "crop_focal" }' quality='{ quality ?? "70"}' }} 2x
+        "
+      />
+    {{ /if }}
+
+    {{ if w_md }}
+      <source
+        media="(min-width: 640px)"
+        srcset="
+          {{ glide:url :width='w_md' :height='(w_md * height) / width' :format='file' fit='{ fit ?? "crop_focal" }' quality='{ quality ?? "70"}' }},
+          {{ glide:url :width='(w_md * 2)' :height='((w_md * 2) * height) / width' :format='file' fit='{ fit ?? "crop_focal" }' quality='{ quality ?? "70"}' }} 2x
+        "
+      />
+    {{ /if }}
+
+    {{ if w_sm }}
+      <source
+        media="(min-width: 375px)"
+        srcset="
+          {{ glide:url :width='w_sm' :height='(w_sm * height) / width' :format='file' fit='{ fit ?? "crop_focal" }' quality='{ quality ?? "70"}' }},
+          {{ glide:url :width='(w_sm * 2)' :height='((w_sm * 2) * height) / width' :format='file' fit='{ fit ?? "crop_focal" }' quality='{ quality ?? "70"}' }} 2x
+        "
+      />
+    {{ /if }}
+  {{ /view:formats }}
+
+  <img
+    src="{{ glide:url width="768" :height="(w_sm * height) / width" fit='{ fit ?? "crop_focal" }' quality='{ quality ?? "70"}' }}"
+    width="{{ width }}"
+    height="{{ height }}"
+    alt="{{ alt }}"
+    class="{{ class }}"
+    {{ if lazyload }}
+      loading="lazy"
+    {{ /if }}
+  />
+</picture>

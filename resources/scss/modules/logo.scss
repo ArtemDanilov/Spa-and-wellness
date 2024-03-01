@@ -1,0 +1,21 @@
+.logo {
+    &-dark {
+        .color-primary {
+            fill: #091326;
+        }
+
+        .color-secondary {
+            fill: #F8F7F4;
+        }
+    }
+
+    &-light {
+        .color-primary {
+            fill: #F8F7F4;
+        }
+
+        .color-secondary {
+            fill: #091326;
+        }
+    }
+}
