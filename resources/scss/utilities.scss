@@ -21,3 +21,9 @@
         @apply text-5xl leading-tight font-secondary lg:text-6xl 2xl:text-7.5xl mb-8;
     }
 }
+
+.heading-white {
+    h2, p {
+        @apply text-white #{!important};
+    }
+}

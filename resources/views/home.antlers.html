@@ -105,4 +105,20 @@ partners:
             </ul>
         </div>
     {{ /partial:section }}
+
+    {{ partial:section
+        container="full"
+        classes="py-32 bg-[linear-gradient(rgba(9,19,38,.5),rgba(9,19,38,.5)),url('/public/assets/banner_image.jpg')] bg-center bg-cover md:py-40 xl:py-[13.125rem]"
+    }}
+        {{ partial:heading
+            title="Banner AD"
+            subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+            center="true"
+            classes="heading-white mb-5"
+        }}
+
+        <a href="#cta" class="block w-max font-primary font-semibold text-sm py-4 px-8 bg-beige-50 text-black mx-auto">
+            Call to action
+        </a>
+    {{ /partial:section }}
 </main>
