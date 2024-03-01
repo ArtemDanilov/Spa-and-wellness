@@ -18,6 +18,19 @@ team:
   - img: /assets/team/rachel.jpg
     full_name: "Rachel Webb"
     position: "Public Affairs and Policy Consultant"
+partners:
+  - logo: /assets/partners/made_for_life.png
+    url: https://madeforlife.org/
+  - logo: /assets/partners/european_spa.png
+    url: https://europeanspamagazine.com/
+  - logo: /assets/partners/uk_active.png
+    url: https://www.ukactive.com/
+  - logo: /assets/partners/spa_life_international.png
+    url: https://www.spa-life.international/
+  - logo: /assets/partners/pbg.jpg
+    url: https://professionalbeauty.group/site/Home
+  - logo: /assets/partners/world_spa_and_wellness.jpeg
+    url: https://professionalbeauty.co.uk/
 ---
 
 <main>
@@ -72,5 +85,24 @@ team:
             {{ /view:team }}
         </div>
 
+    {{ /partial:section }}
+
+    {{ partial:section
+        container="full"
+        classes="bg-white py-16 md:py-20"
+    }}
+        <div class="container">
+            {{ partial:heading title="Strategic Partners" center="true" classes="mb-4" }}
+
+            <ul class="flex flex-wrap justify-center items-center gap-8 lg:gap-16">
+                {{ view:partners }}
+                    <li class="w-36 lg:w-auto">
+                        <a href="{{ url }}" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ logo }}" alt="logo" width="156" height="156" />
+                        </a>
+                    </li>
+                {{ /view:partners }}
+            </ul>
+        </div>
     {{ /partial:section }}
 </main>
