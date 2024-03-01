@@ -1,21 +1,5 @@
 <section class="w-full">
-    
     <div class="{{ container !== 'full' ?= 'container' }} {{ classes }}">
-        {{ if heading || subheading }}
-            <div class="{{ container === 'full' ?= 'text-center px-2' }}">
-                {{ if heading }}
-                    <h2 class="max-w-xl mx-auto font-secondary text-black leading-tight lg:max-w-[54.75rem] {{ heading_size === 'big' ? 'text-5xl lg:text-6xl 2xl:text-7.5xl mb-8' : 'text-3xl lg:text-5.5xl mb-2.5' }}">
-                        {{ heading }}
-                    </h2>
-                {{ /if }}
-                {{ if subheading }}
-                    <p class="font-primary text-brown text-base leading-normal max-w-[52.25rem] mx-auto lg:text-xl lg:leading-normal">
-                        {{ subheading }}
-                    </p>
-                {{ /if }}
-            </div>
-        {{ /if }}
-
         {{ slot }}
     </div>
 </section>
