@@ -5,15 +5,31 @@ slides:
   - img: "/assets/pebbles_3.jpg"
   - img: "/assets/pebbles_4.jpg"
   - img: "/assets/pebbles_5.jpg"
+team:
+  - img: /assets/team/abi.jpg
+    full_name: "Abi Selby"
+    position: "Chair"
+  - img: /assets/team/helena.jpg
+    full_name: "Helena Grzesk MBE"
+    position: "General Manager"
+  - img: /assets/team/helena-2.jpg
+    full_name: "Helena Grzesk MBE"
+    position: "Public Affairs and Policy Consultant"
+  - img: /assets/team/rachel.jpg
+    full_name: "Rachel Webb"
+    position: "Public Affairs and Policy Consultant"
 ---
 
 <main>
     {{ partial:section
-        heading_size="big"
         container="full"
-        heading="About Us"
         classes="pt-12 lg:pt-16 xl:pt-22.5"
     }}
+        {{ partial:heading
+            title_size="lg"
+            title="About us"
+            center="true"
+        }}
         {{ partial:slider :slides="view:slides" }}
     {{ /partial:section }}
 
@@ -21,8 +37,40 @@ slides:
         container="full"
         classes="bg-beige-200 py-16 mt-5 md:py-20"
     }}
-        <h2 class="max-w-xl px-2 mx-auto text-3xl font-secondary text-black text-center leading-[1.4] lg:max-w-[54.75rem] lg:text-5xl lg:leading-[1.4]">
-            We are a not-for-profit, impartial body comprised of members and partners from across the UK spa, salon and wellness sector.
-        </h2>
+        {{ partial:heading
+            title_size="md"
+            title="We are a not-for-profit, impartial body comprised of members and partners from across the UK spa, salon and wellness sector."
+            center="true"
+        }}
+    {{ /partial:section }}
+
+    {{ partial:section classes="py-16 space-y-6 lg:grid lg:gap-x-5 grid-cols-[194px,1fr] lg:space-y-0 lg:gap-y-10" }}
+        {{ partial:heading
+            title="Who We Are"
+            subtitle="Our board members and support team give their time freely to help steer the UK Spa Association in the direction of our mission and to ensure we are always staying true to our vision. Made up of key industry figures with a wealth of experince both individually and as a collective the board positions are voted by members at the AGM."
+            classes="col-start-2 col-end-3"
+        }}
+
+        <fieldset class="col-start-1 col-end-2 space-y-2.5">
+            <div>
+                <input type="radio" id="team" name="people" class="hidden" checked/>
+                <label for="team">The Team</label>
+            </div>
+            <div>
+                <input type="radio" id="board" name="people" class="hidden" />
+                <label for="board">The Board</label>
+            </div>
+        </fieldset>
+
+        <div class="grid gap-x-5 gap-y-8 col-start-2 col-end-3 sm:grid-cols-2 xl:grid-cols-3">
+            {{ view:team }}
+                {{ partial:person
+                    :img="img"
+                    :full_name="full_name"
+                    :position="position"
+                }}
+            {{ /view:team }}
+        </div>
+
     {{ /partial:section }}
 </main>

@@ -41,6 +41,7 @@ export default {
             'beige-200': '#E8DBCD',
         },
         fontSize: {
+            '3.5xl': ['2rem', '1.5'], // 32px
             '5.5xl': ['3.125rem', '1.2'], // 50px
             '7.5xl': ['5.625rem', '1.2']  // 90px
         },

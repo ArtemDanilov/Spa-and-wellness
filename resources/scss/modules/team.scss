@@ -1,0 +1,11 @@
+fieldset {
+    label {
+        @apply block font-primary font-semibold text-sm text-black text-center py-4 px-4 w-[12.125rem] bg-beige-100 lg:w-full;
+    }
+
+    input[type="radio"]:checked {
+        & + label {
+            @apply bg-black text-beige-50 #{!important};
+        }
+    }
+}
